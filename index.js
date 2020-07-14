@@ -30,7 +30,7 @@ app.post("/webhook", (req, res) => {
   console.log("query: ", agent.query);
   console.log("session: ", agent.session);
 
-  async function testhook(agent) {
+  function testhook(agent) {
     agent.add("The webhook is working!");
   }
 

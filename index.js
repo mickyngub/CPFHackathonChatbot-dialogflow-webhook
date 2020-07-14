@@ -8,7 +8,7 @@ const port = process.env.PORT || 4000;
 const { WebhookClient } = require("dialogflow-fulfillment");
 
 // app.use(morgan("dev"));
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.post("/besthook", (req, res) => {
   console.log("post is working");

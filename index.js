@@ -32,6 +32,7 @@ app.post("/webhook", (req, res) => {
 
   const itemConfirmYes = (agent) => {
     console.log("itemConfirmYes");
+    agent.add("item confirm yes");
   };
   const testhook = (agent) => {
     agent.add("The webhook is working!");

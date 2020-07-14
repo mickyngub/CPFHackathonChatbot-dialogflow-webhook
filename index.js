@@ -35,7 +35,7 @@ app.post("/webhook", (req, res) => {
   }
 
   let intentMap = new Map();
-  intentMap.set("besthook", testhook);
+  intentMap.set("kesthook", testhook);
   agent.handleRequest(intentMap);
 });
 

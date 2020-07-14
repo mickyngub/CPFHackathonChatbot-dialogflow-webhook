@@ -88,9 +88,18 @@ app.post("/webhook", (req, res) => {
     }
   };
 
+  const orderClearBasket = (agent) => {
+    if (agent.context.get("basket")) {
+      const basket = agent.context.get("basket");
+      basket.parameters.items = {};
+    }
+    agent.add("Your basket is now empty!");
+  };
+
   let intentMap = new Map();
   intentMap.set("besthook", testhook);
   intentMap.set("order-showbasket", orderShowBasket);
+  intentMap.set("order-clearbasket", orderClearBasket);
   intentMap.set("item-confirm-yes", itemConfirmYes);
   agent.handleRequest(intentMap);
 });

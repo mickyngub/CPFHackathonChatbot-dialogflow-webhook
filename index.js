@@ -44,7 +44,7 @@ app.post("/webhook", (req, res) => {
 
   // Run the proper function handler based on the matched Dialogflow intent name
   let intentMap = new Map();
-  intentMap.set("Location", location); // "Location" is once Intent Name of Dialogflow Agent
+  intentMap.set("Location", location); // "Location" is one Intent Name of Dialogflow Agent
   agent.handleRequest(intentMap);
 });
 

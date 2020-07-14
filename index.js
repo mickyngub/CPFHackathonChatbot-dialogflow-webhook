@@ -10,6 +10,10 @@ const { WebhookClient } = require("dialogflow-fulfillment");
 // app.use(morgan("dev"));
 app.use(bodyParser.json());
 
+app.post("/besthook", (req, res) => {
+  console.log("post is working");
+  console.log(req.body);
+});
 app.get("/", (req, res) => {
   res.send({
     success: true,
@@ -17,8 +21,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/webhook", (req, res) => {
-  console.log("POST: /");
-  console.log("Body: ", req.body);
+  //   console.log("POST: /");
+  //   console.log("Body: ", req.body);
 
   //Create an instance
   const agent = new WebhookClient({

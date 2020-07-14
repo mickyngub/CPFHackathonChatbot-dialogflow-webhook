@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/webhook", (req, res) => {
+  console.log("Webhook is called");
+});
+
+app.post("/webhookie", (req, res) => {
   console.log("POST: /");
   console.log("Body: ", req.body);
 

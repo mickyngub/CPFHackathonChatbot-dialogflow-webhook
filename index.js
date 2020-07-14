@@ -89,7 +89,8 @@ app.post("/webhook", (req, res) => {
   };
 
   const orderClearBasket = (agent) => {
-    agent.clearContext("basket");
+    agent.context.delete("basket");
+
     agent.add("Your basket is now empty!");
   };
 

@@ -40,6 +40,9 @@ app.post("/webhook", (req, res) => {
     console.log("This is food", food);
     console.log("This is quantity", quantity);
     console.log("This is type", type);
+    console.log(agent.fulfillmentText);
+    console.log(agent.consoleMessages.Text.text);
+    agent.add(agent.consoleMessages.Text.text);
   };
   const testhook = (agent) => {
     agent.add("The webhook is working!");

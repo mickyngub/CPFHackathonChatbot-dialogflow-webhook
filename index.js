@@ -68,7 +68,22 @@ app.post("/webhook", (req, res) => {
   };
 
   const orderShowBasket = (agent) => {
-    agent.add("Nothing is in the basket");
+    if (agent.context.get("basket")) {
+      const basket = agent.context.get("basket"),
+        basketItems = basket.parameters.items,
+        itemKeys = Object.keys(basketItems);
+      var basketOutput = "So far you've got: ";
+      for (let i = 0; i < itemKeys.length; i++) {
+        let item = basketItems[itemKeys[i]];
+        if (i > 0 && i === itemKeys.length - 1) {
+          basketOutput += ` and `;
+        } else if (i > 0) {
+          basketOutput += ` , `;
+        }
+        basketOutput += `${item.quantity} of ${item.type} ${item.food}`;
+      }
+      agent.add(basketOutput);
+    }
   };
 
   let intentMap = new Map();

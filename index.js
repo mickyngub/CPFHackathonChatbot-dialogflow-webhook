@@ -24,22 +24,24 @@ app.post("/webhook", (req, res) => {
     response: res,
   });
 
-  console.log("agentVersion: " + agent.agentVersion);
-  console.log("intent: " + agent.intent);
-  console.log("locale: " + agent.locale);
-  console.log("query: ", agent.query);
-  console.log("session: ", agent.session);
+  // console.log("agentVersion: " + agent.agentVersion);
+  // console.log("intent: " + agent.intent);
+  // console.log("locale: " + agent.locale);
+  // console.log("query: ", agent.query);
+  // console.log("session: ", agent.session);
 
   const itemConfirmYes = (agent) => {
     const item = agent.context.get("item"),
       food = item.parameters.food,
       quantity = item.parameters.quantity,
       type = item.parameters.type;
-    console.log("This is agent", agent);
-    console.log("This is item", item);
-    console.log("This is food", food);
-    console.log("This is quantity", quantity);
-    console.log("This is type", type);
+    console.log("req body is", req.body);
+    console.log("res body is", res.body);
+    // console.log("This is agent", agent);
+    // console.log("This is item", item);
+    // console.log("This is food", food);
+    // console.log("This is quantity", quantity);
+    // console.log("This is type", type);
   };
   const testhook = (agent) => {
     agent.add("The webhook is working!");

@@ -31,8 +31,15 @@ app.post("/webhook", (req, res) => {
   console.log("session: ", agent.session);
 
   const itemConfirmYes = (agent) => {
-    console.log("itemConfirmYes");
-    agent.add("item confirm yes");
+    const item = agent.context.get("item"),
+      food = item.parameters.food,
+      quantity = item.parameters.quantity,
+      type = item.parameters.type;
+    console.log("This is agent", agent);
+    console.log("This is item", item);
+    console.log("This is food", food);
+    console.log("This is quantity", quantity);
+    console.log("This is type", type);
   };
   const testhook = (agent) => {
     agent.add("The webhook is working!");

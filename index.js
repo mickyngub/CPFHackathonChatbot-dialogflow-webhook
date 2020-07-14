@@ -35,7 +35,7 @@ app.post("/webhook", (req, res) => {
       food = item.parameters.food,
       quantity = item.parameters.quantity,
       type = item.parameters.type;
-    console.log(agent.context);
+    console.log("This is agent.context", agent.context);
     // console.log("This is agent", agent);
     // console.log("This is item", item);
     // console.log("This is food", food);

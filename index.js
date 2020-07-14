@@ -83,6 +83,8 @@ app.post("/webhook", (req, res) => {
         basketOutput += `${item.quantity} of ${item.type} ${item.food}`;
       }
       agent.add(basketOutput);
+    } else {
+      agent.add("You've not order yet!");
     }
   };
 

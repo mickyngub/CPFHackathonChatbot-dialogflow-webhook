@@ -30,12 +30,21 @@ app.post("/webhook", (req, res) => {
   console.log("query: ", agent.query);
   console.log("session: ", agent.session);
 
-  function testhook(agent) {
+  const itemConfirmYes = (agent) => {
+    console.log("itemConfirmYes");
+  };
+  const testhook = (agent) => {
     agent.add("The webhook is working!");
-  }
+  };
+
+  const orderShowBasket = (agent) => {
+    agent.add("Nothing is in the basket");
+  };
 
   let intentMap = new Map();
   intentMap.set("besthook", testhook);
+  intentMap.set("order-showbasket", orderShowBasket);
+  intentMap.set("item-confirm-yes", itemConfirmYes);
   agent.handleRequest(intentMap);
 });
 

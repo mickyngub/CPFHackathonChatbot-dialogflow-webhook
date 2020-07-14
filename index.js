@@ -31,11 +31,11 @@ app.post("/webhook", (req, res) => {
   });
 
   //Test get value of WebhookClient
-  console.log("agentVersion: " + agent.agentVersion);
-  console.log("intent: " + agent.intent);
-  console.log("locale: " + agent.locale);
-  console.log("query: ", agent.query);
-  console.log("session: ", agent.session);
+  //   console.log("agentVersion: " + agent.agentVersion);
+  //   console.log("intent: " + agent.intent);
+  //   console.log("locale: " + agent.locale);
+  //   console.log("query: ", agent.query);
+  //   console.log("session: ", agent.session);
 
   //Function Location
   function location(agent) {
